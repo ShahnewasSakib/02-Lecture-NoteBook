@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Vectors – Missing Semester CUET</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-93d1cf9875517401aa5b93e75c772204.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Missing Semester CUET</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-a-vector" id="toc-what-is-a-vector" class="nav-link active" data-scroll-target="#what-is-a-vector">What is a Vector?</a></li>
+  <li><a href="#but-is-it-the-same-as-vectors-in-csmath" id="toc-but-is-it-the-same-as-vectors-in-csmath" class="nav-link" data-scroll-target="#but-is-it-the-same-as-vectors-in-csmath">But is it the Same as Vectors in CS/Math?</a>
+  <ul class="collapse">
+  <li><a href="#what-is-a-dimension" id="toc-what-is-a-dimension" class="nav-link" data-scroll-target="#what-is-a-dimension">What is a Dimension?</a></li>
+  </ul></li>
+  <li><a href="#dimension-in-machine-learning" id="toc-dimension-in-machine-learning" class="nav-link" data-scroll-target="#dimension-in-machine-learning">Dimension in Machine Learning</a></li>
+  <li><a href="#vectors-in-mathematics-and-computer-science" id="toc-vectors-in-mathematics-and-computer-science" class="nav-link" data-scroll-target="#vectors-in-mathematics-and-computer-science">Vectors in Mathematics and Computer Science</a>
+  <ul class="collapse">
+  <li><a href="#same-idea-as-physics" id="toc-same-idea-as-physics" class="nav-link" data-scroll-target="#same-idea-as-physics">Same Idea as Physics</a></li>
+  <li><a href="#why-this-representation-is-better" id="toc-why-this-representation-is-better" class="nav-link" data-scroll-target="#why-this-representation-is-better">Why This Representation is Better</a></li>
+  <li><a href="#a-vector-as-a-point" id="toc-a-vector-as-a-point" class="nav-link" data-scroll-target="#a-vector-as-a-point">A Vector as a Point</a></li>
+  <li><a href="#column-vectors" id="toc-column-vectors" class="nav-link" data-scroll-target="#column-vectors">Column Vectors</a></li>
+  <li><a href="#row-vectors" id="toc-row-vectors" class="nav-link" data-scroll-target="#row-vectors">Row Vectors</a></li>
+  <li><a href="#why-do-we-need-both" id="toc-why-do-we-need-both" class="nav-link" data-scroll-target="#why-do-we-need-both">Why Do We Need Both?</a></li>
+  </ul></li>
+  <li><a href="#vectors-vs-sets" id="toc-vectors-vs-sets" class="nav-link" data-scroll-target="#vectors-vs-sets">Vectors vs Sets</a>
+  <ul class="collapse">
+  <li><a href="#order" id="toc-order" class="nav-link" data-scroll-target="#order">Order</a></li>
+  <li><a href="#duplicates" id="toc-duplicates" class="nav-link" data-scroll-target="#duplicates">Duplicates</a></li>
+  <li><a href="#why-vectors-are-used-in-machine-learning" id="toc-why-vectors-are-used-in-machine-learning" class="nav-link" data-scroll-target="#why-vectors-are-used-in-machine-learning">Why Vectors Are Used in Machine Learning</a></li>
+  </ul></li>
+  <li><a href="#vector-operations" id="toc-vector-operations" class="nav-link" data-scroll-target="#vector-operations">Vector Operations</a>
+  <ul class="collapse">
+  <li><a href="#vector-addition" id="toc-vector-addition" class="nav-link" data-scroll-target="#vector-addition">1. Vector Addition</a></li>
+  <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication">2. Scalar Multiplication</a></li>
+  <li><a href="#hadamard-product" id="toc-hadamard-product" class="nav-link" data-scroll-target="#hadamard-product">3. Hadamard Product</a></li>
+  <li><a href="#dot-product" id="toc-dot-product" class="nav-link" data-scroll-target="#dot-product">4. Dot Product</a></li>
+  <li><a href="#a-note-for-machine-learning" id="toc-a-note-for-machine-learning" class="nav-link" data-scroll-target="#a-note-for-machine-learning">A Note for Machine Learning</a>
+  <ul class="collapse">
+  <li><a href="#mathematical-notation" id="toc-mathematical-notation" class="nav-link" data-scroll-target="#mathematical-notation">Mathematical Notation</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy">NumPy</a>
+  <ul class="collapse">
+  <li><a href="#what-is-numpy" id="toc-what-is-numpy" class="nav-link" data-scroll-target="#what-is-numpy">What is NumPy?</a>
+  <ul class="collapse">
+  <li><a href="#import-numpy" id="toc-import-numpy" class="nav-link" data-scroll-target="#import-numpy">Import NumPy</a></li>
+  <li><a href="#create-two-vectors" id="toc-create-two-vectors" class="nav-link" data-scroll-target="#create-two-vectors">Create Two Vectors</a></li>
+  </ul></li>
+  <li><a href="#vector-addition-1" id="toc-vector-addition-1" class="nav-link" data-scroll-target="#vector-addition-1">1. Vector Addition</a>
+  <ul class="collapse">
+  <li><a href="#mathematically" id="toc-mathematically" class="nav-link" data-scroll-target="#mathematically">Mathematically</a></li>
+  <li><a href="#numpy-1" id="toc-numpy-1" class="nav-link" data-scroll-target="#numpy-1">NumPy</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  </ul></li>
+  <li><a href="#scalar-multiplication-1" id="toc-scalar-multiplication-1" class="nav-link" data-scroll-target="#scalar-multiplication-1">2. Scalar Multiplication</a>
+  <ul class="collapse">
+  <li><a href="#mathematically-1" id="toc-mathematically-1" class="nav-link" data-scroll-target="#mathematically-1">Mathematically</a></li>
+  <li><a href="#numpy-2" id="toc-numpy-2" class="nav-link" data-scroll-target="#numpy-2">NumPy</a></li>
+  <li><a href="#output-1" id="toc-output-1" class="nav-link" data-scroll-target="#output-1">Output</a></li>
+  </ul></li>
+  <li><a href="#hadamard-product-1" id="toc-hadamard-product-1" class="nav-link" data-scroll-target="#hadamard-product-1">3. Hadamard Product</a>
+  <ul class="collapse">
+  <li><a href="#mathematically-2" id="toc-mathematically-2" class="nav-link" data-scroll-target="#mathematically-2">Mathematically</a></li>
+  <li><a href="#numpy-3" id="toc-numpy-3" class="nav-link" data-scroll-target="#numpy-3">NumPy</a></li>
+  <li><a href="#output-2" id="toc-output-2" class="nav-link" data-scroll-target="#output-2">Output</a></li>
+  </ul></li>
+  <li><a href="#dot-product-1" id="toc-dot-product-1" class="nav-link" data-scroll-target="#dot-product-1">4. Dot Product</a>
+  <ul class="collapse">
+  <li><a href="#mathematically-3" id="toc-mathematically-3" class="nav-link" data-scroll-target="#mathematically-3">Mathematically</a></li>
+  <li><a href="#numpy-4" id="toc-numpy-4" class="nav-link" data-scroll-target="#numpy-4">NumPy</a></li>
+  <li><a href="#output-3" id="toc-output-3" class="nav-link" data-scroll-target="#output-3">Output</a></li>
+  </ul></li>
+  <li><a href="#why-numpy-makes-things-easier" id="toc-why-numpy-makes-things-easier" class="nav-link" data-scroll-target="#why-numpy-makes-things-easier">Why NumPy Makes Things Easier</a></li>
+  </ul></li>
+  <li><a href="#scalars-vectors-matrices-and-tensors" id="toc-scalars-vectors-matrices-and-tensors" class="nav-link" data-scroll-target="#scalars-vectors-matrices-and-tensors">Scalars, Vectors, Matrices, and Tensors</a>
+  <ul class="collapse">
+  <li><a href="#scalar" id="toc-scalar" class="nav-link" data-scroll-target="#scalar">1. Scalar</a>
+  <ul class="collapse">
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#dimension" id="toc-dimension" class="nav-link" data-scroll-target="#dimension">Dimension</a></li>
+  <li><a href="#python-representation" id="toc-python-representation" class="nav-link" data-scroll-target="#python-representation">Python Representation</a></li>
+  <li><a href="#when-is-it-used" id="toc-when-is-it-used" class="nav-link" data-scroll-target="#when-is-it-used">When Is It Used?</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#vector" id="toc-vector" class="nav-link" data-scroll-target="#vector">2. Vector</a>
+  <ul class="collapse">
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1">Examples</a></li>
+  <li><a href="#dimension-1" id="toc-dimension-1" class="nav-link" data-scroll-target="#dimension-1">Dimension</a></li>
+  <li><a href="#python-representation-1" id="toc-python-representation-1" class="nav-link" data-scroll-target="#python-representation-1">Python Representation</a></li>
+  <li><a href="#when-is-it-used-1" id="toc-when-is-it-used-1" class="nav-link" data-scroll-target="#when-is-it-used-1">When Is It Used?</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  </ul></li>
+  <li><a href="#matrix" id="toc-matrix" class="nav-link" data-scroll-target="#matrix">3. Matrix</a>
+  <ul class="collapse">
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  <li><a href="#dimension-2" id="toc-dimension-2" class="nav-link" data-scroll-target="#dimension-2">Dimension</a></li>
+  <li><a href="#python-representation-2" id="toc-python-representation-2" class="nav-link" data-scroll-target="#python-representation-2">Python Representation</a></li>
+  <li><a href="#when-is-it-used-2" id="toc-when-is-it-used-2" class="nav-link" data-scroll-target="#when-is-it-used-2">When Is It Used?</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
+  </ul></li>
+  <li><a href="#tensor" id="toc-tensor" class="nav-link" data-scroll-target="#tensor">4. Tensor</a>
+  <ul class="collapse">
+  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2">Examples</a></li>
+  <li><a href="#dimension-3" id="toc-dimension-3" class="nav-link" data-scroll-target="#dimension-3">Dimension</a></li>
+  <li><a href="#python-representation-3" id="toc-python-representation-3" class="nav-link" data-scroll-target="#python-representation-3">Python Representation</a></li>
+  <li><a href="#when-is-it-used-3" id="toc-when-is-it-used-3" class="nav-link" data-scroll-target="#when-is-it-used-3">When Is It Used?</a></li>
+  </ul></li>
+  <li><a href="#image-example" id="toc-image-example" class="nav-link" data-scroll-target="#image-example">Image Example</a>
+  <ul class="collapse">
+  <li><a href="#grayscale-image" id="toc-grayscale-image" class="nav-link" data-scroll-target="#grayscale-image">Grayscale Image</a></li>
+  <li><a href="#color-image" id="toc-color-image" class="nav-link" data-scroll-target="#color-image">Color Image</a></li>
+  </ul></li>
+  <li><a href="#shapes-in-numpy" id="toc-shapes-in-numpy" class="nav-link" data-scroll-target="#shapes-in-numpy">Shapes in NumPy</a>
+  <ul class="collapse">
+  <li><a href="#scalar-1" id="toc-scalar-1" class="nav-link" data-scroll-target="#scalar-1">Scalar</a></li>
+  <li><a href="#vector-1" id="toc-vector-1" class="nav-link" data-scroll-target="#vector-1">Vector</a></li>
+  <li><a href="#matrix-1" id="toc-matrix-1" class="nav-link" data-scroll-target="#matrix-1">Matrix</a></li>
+  <li><a href="#tensor-1" id="toc-tensor-1" class="nav-link" data-scroll-target="#tensor-1">Tensor</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">Matrices</a>
+  <ul class="collapse">
+  <li><a href="#what-is-a-matrix" id="toc-what-is-a-matrix" class="nav-link" data-scroll-target="#what-is-a-matrix">What is a Matrix?</a>
+  <ul class="collapse">
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
+  <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape">Shape</a></li>
+  </ul></li>
+  <li><a href="#why-are-matrices-important-in-ml" id="toc-why-are-matrices-important-in-ml" class="nav-link" data-scroll-target="#why-are-matrices-important-in-ml">Why Are Matrices Important in ML?</a></li>
+  <li><a href="#matrix-indexing-mathematical-notation" id="toc-matrix-indexing-mathematical-notation" class="nav-link" data-scroll-target="#matrix-indexing-mathematical-notation">Matrix Indexing (Mathematical Notation)</a>
+  <ul class="collapse">
+  <li><a href="#entry" id="toc-entry" class="nav-link" data-scroll-target="#entry">Entry</a></li>
+  <li><a href="#row" id="toc-row" class="nav-link" data-scroll-target="#row">Row</a></li>
+  <li><a href="#column" id="toc-column" class="nav-link" data-scroll-target="#column">Column</a></li>
+  </ul></li>
+  <li><a href="#matrix-representation-in-python" id="toc-matrix-representation-in-python" class="nav-link" data-scroll-target="#matrix-representation-in-python">Matrix Representation in Python</a>
+  <ul class="collapse">
+  <li><a href="#using-nested-lists" id="toc-using-nested-lists" class="nav-link" data-scroll-target="#using-nested-lists">Using Nested Lists</a></li>
+  <li><a href="#using-numpy" id="toc-using-numpy" class="nav-link" data-scroll-target="#using-numpy">Using NumPy</a></li>
+  <li><a href="#shape-1" id="toc-shape-1" class="nav-link" data-scroll-target="#shape-1">Shape</a></li>
+  <li><a href="#output-8" id="toc-output-8" class="nav-link" data-scroll-target="#output-8">Output</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#matrix-operations" id="toc-matrix-operations" class="nav-link" data-scroll-target="#matrix-operations">Matrix Operations</a>
+  <ul class="collapse">
+  <li><a href="#matrix-addition" id="toc-matrix-addition" class="nav-link" data-scroll-target="#matrix-addition">1. Matrix Addition</a>
+  <ul class="collapse">
+  <li><a href="#mathematically-4" id="toc-mathematically-4" class="nav-link" data-scroll-target="#mathematically-4">Mathematically</a></li>
+  <li><a href="#numpy-5" id="toc-numpy-5" class="nav-link" data-scroll-target="#numpy-5">NumPy</a></li>
+  <li><a href="#output-9" id="toc-output-9" class="nav-link" data-scroll-target="#output-9">Output</a></li>
+  </ul></li>
+  <li><a href="#scalar-multiplication-2" id="toc-scalar-multiplication-2" class="nav-link" data-scroll-target="#scalar-multiplication-2">2. Scalar Multiplication</a>
+  <ul class="collapse">
+  <li><a href="#mathematically-5" id="toc-mathematically-5" class="nav-link" data-scroll-target="#mathematically-5">Mathematically</a></li>
+  <li><a href="#numpy-6" id="toc-numpy-6" class="nav-link" data-scroll-target="#numpy-6">NumPy</a></li>
+  <li><a href="#output-10" id="toc-output-10" class="nav-link" data-scroll-target="#output-10">Output</a></li>
+  </ul></li>
+  <li><a href="#hadamard-product-2" id="toc-hadamard-product-2" class="nav-link" data-scroll-target="#hadamard-product-2">3. Hadamard Product</a>
+  <ul class="collapse">
+  <li><a href="#mathematically-6" id="toc-mathematically-6" class="nav-link" data-scroll-target="#mathematically-6">Mathematically</a></li>
+  <li><a href="#numpy-7" id="toc-numpy-7" class="nav-link" data-scroll-target="#numpy-7">NumPy</a></li>
+  <li><a href="#output-11" id="toc-output-11" class="nav-link" data-scroll-target="#output-11">Output</a></li>
+  </ul></li>
+  <li><a href="#matrix-multiplication" id="toc-matrix-multiplication" class="nav-link" data-scroll-target="#matrix-multiplication">4. Matrix Multiplication</a>
+  <ul class="collapse">
+  <li><a href="#mathematically-7" id="toc-mathematically-7" class="nav-link" data-scroll-target="#mathematically-7">Mathematically</a></li>
+  <li><a href="#numpy-8" id="toc-numpy-8" class="nav-link" data-scroll-target="#numpy-8">NumPy</a></li>
+  <li><a href="#output-12" id="toc-output-12" class="nav-link" data-scroll-target="#output-12">Output</a></li>
+  </ul></li>
+  <li><a href="#example-cgpa-calculation" id="toc-example-cgpa-calculation" class="nav-link" data-scroll-target="#example-cgpa-calculation">Example: CGPA Calculation</a>
+  <ul class="collapse">
+  <li><a href="#numpy-9" id="toc-numpy-9" class="nav-link" data-scroll-target="#numpy-9">NumPy</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Vectors</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-is-a-vector" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-vector">What is a Vector?</h2>
+<p>You already know about vectors from Physics — a quantity that has both <strong>direction</strong> and <strong>magnitude</strong>. Like Displacement, Velocity, Acceleration…</p>
+<p>In 2D (Two-Dimensional) space, it can be represented as:</p>
+<p><span class="math display">\[\vec{A} = \begin{bmatrix} A_x \\ A_y \end{bmatrix}\]</span></p>
+<p>where: - <span class="math inline">\(A_x\)</span> = x-component - <span class="math inline">\(A_y\)</span> = y-component</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.intmath.com/vectors/img/235-3D-vector.png" class="img-fluid figure-img"></p>
+<figcaption>3D Vector</figcaption>
+</figure>
+</div>
+</section>
+<section id="but-is-it-the-same-as-vectors-in-csmath" class="level2">
+<h2 class="anchored" data-anchor-id="but-is-it-the-same-as-vectors-in-csmath">But is it the Same as Vectors in CS/Math?</h2>
+<p>Before answering that, let’s take a short journey into Dimensions.</p>
+<section id="what-is-a-dimension" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-dimension">What is a Dimension?</h3>
+<p>In physics, a dimension is an independent direction in which movement or variation is possible. But we can simply think of it as the number of coordinates needed to describe a position.</p>
+<p><strong>1-Dimensional (1D)</strong><br>
+Only one coordinate is needed.</p>
+<p>Examples: * A number line * Position on a straight road</p>
+<p>Representation: <span class="math display">\[[x]\]</span></p>
+<p><strong>2-Dimensional (2D)</strong><br>
+Two coordinates are needed.</p>
+<p>Examples: * A sheet of paper * A computer screen</p>
+<p>Representation: <span class="math display">\[[(x, y)]\]</span></p>
+<p><strong>3-Dimensional (3D)</strong><br>
+Three coordinates are needed.</p>
+<p>Examples: * Physical space * Real-world objects</p>
+<p>Representation: <span class="math display">\[[(x, y, z)]\]</span></p>
+<p>Example: <span class="math display">\[[(3, 4, 5)]\]</span></p>
+<p>But what about <strong>beyond 3 Dimensions</strong>?<br>
+Mathematics is not limited to physical space.<br>
+A point can have any number of coordinates:</p>
+<p><span class="math display">\[(x_1, x_2, x_3, \dots, x_n)\]</span></p>
+<p>Example:</p>
+<p><span class="math display">\[(20, 170, 65, 3.8)\]</span></p>
+<p>This point exists in 4-dimensional space.</p>
+</section>
+</section>
+<section id="dimension-in-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="dimension-in-machine-learning">Dimension in Machine Learning</h2>
+<p>In Machine Learning, each feature corresponds to one dimension.</p>
+<p>Example:</p>
+<p>A student described by: * Age * Height * Weight</p>
+<p>can be represented as:</p>
+<p><span class="math display">\[[(20, 170, 65)]\]</span></p>
+<p>This is a point in a 3-dimensional feature space.</p>
+<p>If we add CGPA:</p>
+<p><span class="math display">\[[(20, 170, 65, 3.8)]\]</span></p>
+<p>the data point becomes 4-dimensional.</p>
+</section>
+<section id="vectors-in-mathematics-and-computer-science" class="level2">
+<h2 class="anchored" data-anchor-id="vectors-in-mathematics-and-computer-science">Vectors in Mathematics and Computer Science</h2>
+<p>Now let’s go back to our previous topic.</p>
+<section id="same-idea-as-physics" class="level3">
+<h3 class="anchored" data-anchor-id="same-idea-as-physics">Same Idea as Physics</h3>
+<p>A vector in mathematics is fundamentally the same concept as in physics.</p>
+<p>In mathematics and computer science, we usually focus on the coordinates that describe the vector. For example:</p>
+<p><span class="math display">\[\begin{bmatrix} 3 \\ 4 \end{bmatrix}\]</span></p>
+<p>can be interpreted as: * A displacement of 3 units along the x-axis and 4 units along the y-axis * A point in a 2-dimensional space * A data sample with two features</p>
+<p>The underlying idea is the same.</p>
+</section>
+<section id="why-this-representation-is-better" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-representation-is-better">Why This Representation is Better</h3>
+<p>Drawing vectors works well in 2D and 3D. However, Machine Learning often deals with hundreds or thousands of dimensions.</p>
+<p>For example, a student’s data may be represented as:</p>
+<p><span class="math display">\[[20, 170, 65, 3.8]\]</span></p>
+<p>A modern dataset may contain:</p>
+<p><span class="math display">\[[x_1, x_2, x_3, \dots, x_{1000}]\]</span></p>
+<p>A 1000-dimensional vector cannot be visualized geometrically. Representing vectors as ordered lists of numbers allows us to work in any number of dimensions.</p>
+</section>
+<section id="a-vector-as-a-point" class="level3">
+<h3 class="anchored" data-anchor-id="a-vector-as-a-point">A Vector as a Point</h3>
+<p>A vector can be viewed as a location in space.</p>
+<p>Example:</p>
+<p><span class="math display">\[\begin{bmatrix} 3 \\ 4 \end{bmatrix}\]</span></p>
+<p>represents the point <span class="math inline">\((3, 4)\)</span> in 2-dimensional space.</p>
+<p>Similarly:</p>
+<p><span class="math display">\[\begin{bmatrix} 2 \\ 5 \\ 7 \end{bmatrix}\]</span></p>
+<p>represents a point in 3-dimensional space.</p>
+</section>
+<section id="column-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="column-vectors">Column Vectors</h3>
+<p>The standard representation in linear algebra is the column vector.</p>
+<p><span class="math display">\[\mathbf{x} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\]</span></p>
+<p>Dimension: <span class="math inline">\(3 \times 1\)</span>, meaning: * 3 rows * 1 column</p>
+<p>Most linear algebra formulas assume vectors are column vectors.</p>
+</section>
+<section id="row-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="row-vectors">Row Vectors</h3>
+<p>A vector can also be written horizontally.</p>
+<p><span class="math display">\[\mathbf{x} = \begin{bmatrix} 1 &amp; 2 &amp; 3 \end{bmatrix}\]</span></p>
+<p>Dimension: <span class="math inline">\(1 \times 3\)</span>, meaning: * 1 row * 3 columns</p>
+<p>This is called a row vector.</p>
+</section>
+<section id="why-do-we-need-both" class="level3">
+<h3 class="anchored" data-anchor-id="why-do-we-need-both">Why Do We Need Both?</h3>
+<p>Many matrix operations require specific orientations.</p>
+<p>For example:</p>
+<p><span class="math display">\[\begin{bmatrix} 1 &amp; 2 &amp; 3 \end{bmatrix} \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}\]</span></p>
+<p>is valid matrix multiplication and produces a scalar.<br>
+The first vector is a row vector.<br>
+The second is a column vector.</p>
+<p>So distinguishing between row and column vectors becomes important in linear algebra and machine learning.</p>
+</section>
+</section>
+<section id="vectors-vs-sets" class="level1">
+<h1>Vectors vs Sets</h1>
+<p>Vectors and sets may both contain multiple values, but they are fundamentally different.</p>
+<section id="order" class="level2">
+<h2 class="anchored" data-anchor-id="order">Order</h2>
+<p>A vector is ordered.</p>
+<p><span class="math display">\[[1, 2, 3]\]</span></p>
+<p>is different from</p>
+<p><span class="math display">\[[3, 2, 1]\]</span></p>
+<p>because the positions of the elements matter. In Machine Learning, each position usually corresponds to a specific feature. For example:</p>
+<p><span class="math display">\[[20, 170, 65]\]</span></p>
+<p>Changing the order changes the meaning.</p>
+<p>A set is unordered.</p>
+<p><span class="math display">\[\{1, 2, 3\}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\{3, 2, 1\}\]</span></p>
+<p>represent the same set. The order of elements has no meaning.</p>
+</section>
+<section id="duplicates" class="level2">
+<h2 class="anchored" data-anchor-id="duplicates">Duplicates</h2>
+<p>Vectors allow duplicate values.</p>
+<p><span class="math display">\[[1, 1, 2, 2, 3]\]</span></p>
+<p>is a valid vector. Each occurrence occupies its own position.</p>
+<p>Sets do not allow duplicates.</p>
+<p><span class="math display">\[\{1, 2, 3\}\]</span></p>
+<p>Repeated elements are automatically ignored.</p>
+</section>
+<section id="why-vectors-are-used-in-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="why-vectors-are-used-in-machine-learning">Why Vectors Are Used in Machine Learning</h2>
+<p>Machine Learning data has: * Ordered features * Repeated values</p>
+<p>For example:</p>
+<p><span class="math display">\[[20, 20, 65, 65]\]</span></p>
+<p>is perfectly valid data. Since order and duplicates both matter, vectors are a natural representation for data — sets are not.</p>
+</section>
+</section>
+<section id="vector-operations" class="level1">
+<h1>Vector Operations</h1>
+<p>Let:</p>
+<p><span class="math display">\[\mathbf{a} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \qquad \mathbf{b} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}\]</span></p>
+<section id="vector-addition" class="level3">
+<h3 class="anchored" data-anchor-id="vector-addition">1. Vector Addition</h3>
+<p>Add corresponding elements.</p>
+<p><span class="math display">\[\mathbf{a} + \mathbf{b} = \begin{bmatrix} 1+4 \\ 2+5 \\ 3+6 \end{bmatrix} = \begin{bmatrix} 5 \\ 7 \\ 9 \end{bmatrix}\]</span></p>
+</section>
+<section id="scalar-multiplication" class="level3">
+<h3 class="anchored" data-anchor-id="scalar-multiplication">2. Scalar Multiplication</h3>
+<p>Multiply every element by a scalar.</p>
+<p><span class="math display">\[2\mathbf{a} = 2 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} = \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}\]</span></p>
+</section>
+<section id="hadamard-product" class="level3">
+<h3 class="anchored" data-anchor-id="hadamard-product">3. Hadamard Product</h3>
+<p>The Hadamard product is element-wise multiplication.</p>
+<p><span class="math display">\[\mathbf{a} \odot \mathbf{b} = \begin{bmatrix} 1 \times 4 \\ 2 \times 5 \\ 3 \times 6 \end{bmatrix} = \begin{bmatrix} 4 \\ 10 \\ 18 \end{bmatrix}\]</span></p>
+<p>The result is still a vector.</p>
+</section>
+<section id="dot-product" class="level3">
+<h3 class="anchored" data-anchor-id="dot-product">4. Dot Product</h3>
+<p>The dot product multiplies corresponding elements and then sums the results.</p>
+<p><span class="math display">\[\mathbf{a} \cdot \mathbf{b} = 1 \times 4 + 2 \times 5 + 3 \times 6 = 4 + 10 + 18 = 32\]</span></p>
+<p>Unlike the Hadamard product, the result is a scalar.</p>
+</section>
+<section id="a-note-for-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="a-note-for-machine-learning">A Note for Machine Learning</h2>
+<p>In mathematics and physics, you may have learned two common types of vector multiplication: * Dot Product * Cross Product</p>
+<p>However, in Machine Learning, the Cross Product is rarely used. Instead, the two vector products you will encounter most often are: * Hadamard Product (element-wise multiplication) * Dot Product</p>
+<section id="mathematical-notation" class="level3">
+<h3 class="anchored" data-anchor-id="mathematical-notation">Mathematical Notation</h3>
+<p>Hadamard Product:</p>
+<p><span class="math display">\[\mathbf{a} \odot \mathbf{b}\]</span></p>
+<p>Dot Product:</p>
+<p><span class="math display">\[\mathbf{a} \cdot \mathbf{b}\]</span></p>
+</section>
+</section>
+</section>
+<section id="numpy" class="level1">
+<h1>NumPy</h1>
+<p>To make these operations easier, Python has a built-in library called <strong>NumPy</strong>.</p>
+<section id="what-is-numpy" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-numpy">What is NumPy?</h2>
+<p>NumPy is a Python library for working with vectors, matrices, and numerical computations. Instead of manually performing operations element by element, NumPy lets us work with entire vectors at once. For now, we will use NumPy to perform the vector operations we just learned.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="import-numpy" class="level3">
+<h3 class="anchored" data-anchor-id="import-numpy">Import NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-two-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="create-two-vectors">Create Two Vectors</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="vector-addition-1" class="level2">
+<h2 class="anchored" data-anchor-id="vector-addition-1">1. Vector Addition</h2>
+<section id="mathematically" class="level3">
+<h3 class="anchored" data-anchor-id="mathematically">Mathematically</h3>
+<p><span class="math display">\[[1, 2, 3] + [4, 5, 6] = [5, 7, 9]\]</span></p>
+</section>
+<section id="numpy-1" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-1">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output" class="level3">
+<h3 class="anchored" data-anchor-id="output">Output</h3>
+<pre class="plaintext"><code>array([5, 7, 9])</code></pre>
+</section>
+</section>
+<section id="scalar-multiplication-1" class="level2">
+<h2 class="anchored" data-anchor-id="scalar-multiplication-1">2. Scalar Multiplication</h2>
+<section id="mathematically-1" class="level3">
+<h3 class="anchored" data-anchor-id="mathematically-1">Mathematically</h3>
+<p><span class="math display">\[2[1, 2, 3] = [2, 4, 6]\]</span></p>
+</section>
+<section id="numpy-2" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-2">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-1" class="level3">
+<h3 class="anchored" data-anchor-id="output-1">Output</h3>
+<pre class="plaintext"><code>array([2, 4, 6])</code></pre>
+</section>
+</section>
+<section id="hadamard-product-1" class="level2">
+<h2 class="anchored" data-anchor-id="hadamard-product-1">3. Hadamard Product</h2>
+<p>Element-wise multiplication.</p>
+<section id="mathematically-2" class="level3">
+<h3 class="anchored" data-anchor-id="mathematically-2">Mathematically</h3>
+<p><span class="math display">\[[1, 2, 3] \odot [4, 5, 6] = [4, 10, 18]\]</span></p>
+</section>
+<section id="numpy-3" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-3">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">*</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-2" class="level3">
+<h3 class="anchored" data-anchor-id="output-2">Output</h3>
+<pre class="plaintext"><code>array([ 4, 10, 18])</code></pre>
+<blockquote class="blockquote">
+<p>Notice that <code>*</code> performs <strong>element-wise multiplication</strong>.</p>
+</blockquote>
+</section>
+</section>
+<section id="dot-product-1" class="level2">
+<h2 class="anchored" data-anchor-id="dot-product-1">4. Dot Product</h2>
+<section id="mathematically-3" class="level3">
+<h3 class="anchored" data-anchor-id="mathematically-3">Mathematically</h3>
+<p><span class="math display">\[[1, 2, 3] \cdot [4, 5, 6] = 1 \times 4 + 2 \times 5 + 3 \times 6 = 32\]</span></p>
+</section>
+<section id="numpy-4" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-4">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">@</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>np.dot(a, b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-3" class="level3">
+<h3 class="anchored" data-anchor-id="output-3">Output</h3>
+<pre class="plaintext"><code>32</code></pre>
+<p>Unlike the Hadamard product, the result is a <strong>scalar</strong>.</p>
+</section>
+</section>
+<section id="why-numpy-makes-things-easier" class="level2">
+<h2 class="anchored" data-anchor-id="why-numpy-makes-things-easier">Why NumPy Makes Things Easier</h2>
+<p>Without NumPy, we would need loops to process each element manually.</p>
+<p>NumPy lets us write operations directly using mathematical notation:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b      <span class="co"># Vector Addition</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> a      <span class="co"># Scalar Multiplication</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">*</span> b      <span class="co"># Hadamard Product</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">@</span> b      <span class="co"># Dot Product</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="scalars-vectors-matrices-and-tensors" class="level1">
+<h1>Scalars, Vectors, Matrices, and Tensors</h1>
+<p>Before learning about matrices, it helps to understand the four basic data structures used in mathematics and machine learning.</p>
+<p>Think of them as increasingly larger containers of numbers.</p>
+<section id="scalar" class="level2">
+<h2 class="anchored" data-anchor-id="scalar">1. Scalar</h2>
+<p>A scalar is a single number.</p>
+<section id="examples" class="level3">
+<h3 class="anchored" data-anchor-id="examples">Examples</h3>
+<p><span class="math display">\[5 \qquad 3.14 \qquad -2\]</span></p>
+</section>
+<section id="dimension" class="level3">
+<h3 class="anchored" data-anchor-id="dimension">Dimension</h3>
+<p>A scalar has <strong>0 dimensions (0D)</strong>.</p>
+</section>
+<section id="python-representation" class="level3">
+<h3 class="anchored" data-anchor-id="python-representation">Python Representation</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="when-is-it-used" class="level3">
+<h3 class="anchored" data-anchor-id="when-is-it-used">When Is It Used?</h3>
+<p>Scalars are used to represent: - A single measurement - A constant - A model parameter - The result of a dot product</p>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="fl">0.01</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="vector" class="level2">
+<h2 class="anchored" data-anchor-id="vector">2. Vector</h2>
+<p>A vector is an ordered collection of numbers.</p>
+<section id="examples-1" class="level3">
+<h3 class="anchored" data-anchor-id="examples-1">Examples</h3>
+<p><span class="math display">\[[1, 2, 3] \qquad [20, 170, 65]\]</span></p>
+</section>
+<section id="dimension-1" class="level3">
+<h3 class="anchored" data-anchor-id="dimension-1">Dimension</h3>
+<p>A vector has <strong>1 dimension (1D)</strong>.</p>
+</section>
+<section id="python-representation-1" class="level3">
+<h3 class="anchored" data-anchor-id="python-representation-1">Python Representation</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="when-is-it-used-1" class="level3">
+<h3 class="anchored" data-anchor-id="when-is-it-used-1">When Is It Used?</h3>
+<p>Vectors are commonly used to represent: - Features of a data sample - Coordinates of a point - Weights of a model</p>
+</section>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>student <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">170</span>, <span class="dv">65</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># age, height, weight</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="matrix" class="level2">
+<h2 class="anchored" data-anchor-id="matrix">3. Matrix</h2>
+<p>A matrix is a collection of vectors arranged in rows and columns.</p>
+<section id="example-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-2">Example</h3>
+<p><span class="math display">\[\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{bmatrix}\]</span></p>
+</section>
+<section id="dimension-2" class="level3">
+<h3 class="anchored" data-anchor-id="dimension-2">Dimension</h3>
+<p>A matrix has <strong>2 dimensions (2D)</strong>: - Rows - Columns</p>
+<p>The matrix above has shape <span class="math inline">\(2 \times 3\)</span>.</p>
+</section>
+<section id="python-representation-2" class="level3">
+<h3 class="anchored" data-anchor-id="python-representation-2">Python Representation</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> [</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="when-is-it-used-2" class="level3">
+<h3 class="anchored" data-anchor-id="when-is-it-used-2">When Is It Used?</h3>
+<p>Matrices are commonly used to represent datasets.</p>
+</section>
+<section id="example-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-3">Example</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">20</span>, <span class="dv">170</span>, <span class="dv">65</span>],</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">22</span>, <span class="dv">175</span>, <span class="dv">70</span>],</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">19</span>, <span class="dv">168</span>, <span class="dv">60</span>]</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each row represents a student. Each column represents a feature.</p>
+</section>
+</section>
+<section id="tensor" class="level2">
+<h2 class="anchored" data-anchor-id="tensor">4. Tensor</h2>
+<p>A tensor is a generalization of vectors and matrices to higher dimensions.</p>
+<section id="examples-2" class="level3">
+<h3 class="anchored" data-anchor-id="examples-2">Examples</h3>
+<ul>
+<li>3D tensor</li>
+<li>4D tensor</li>
+<li>5D tensor</li>
+<li>n-dimensional tensor</li>
+</ul>
+</section>
+<section id="dimension-3" class="level3">
+<h3 class="anchored" data-anchor-id="dimension-3">Dimension</h3>
+<p>A tensor has <strong>3 or more dimensions</strong>.</p>
+</section>
+<section id="python-representation-3" class="level3">
+<h3 class="anchored" data-anchor-id="python-representation-3">Python Representation</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tensor <span class="op">=</span> [</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        [<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        [<span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        [<span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        [<span class="dv">7</span>, <span class="dv">8</span>]</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is a <strong>3D tensor</strong>.</p>
+</section>
+<section id="when-is-it-used-3" class="level3">
+<h3 class="anchored" data-anchor-id="when-is-it-used-3">When Is It Used?</h3>
+<p>Tensors are heavily used in Deep Learning. Examples include: - Color images - Videos - Batches of training data - Neural network activations</p>
+</section>
+</section>
+<section id="image-example" class="level2">
+<h2 class="anchored" data-anchor-id="image-example">Image Example</h2>
+<section id="grayscale-image" class="level3">
+<h3 class="anchored" data-anchor-id="grayscale-image">Grayscale Image</h3>
+<p>A grayscale image can be represented as a matrix:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> [</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">12</span>, <span class="dv">45</span>, <span class="dv">90</span>],</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">80</span>, <span class="dv">20</span>, <span class="dv">10</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Since it has only one intensity value per pixel, it is a <strong>matrix (2D)</strong>.</p>
+</section>
+<section id="color-image" class="level3">
+<h3 class="anchored" data-anchor-id="color-image">Color Image</h3>
+<p>A color image has multiple channels (Red, Green, Blue), making it a tensor.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> [</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    [[<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>]],</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    [[<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">255</span>], [<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">0</span>]]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Since each pixel contains three values (R, G, B), it is a <strong>tensor (3D)</strong>.</p>
+</section>
+</section>
+<section id="shapes-in-numpy" class="level2">
+<h2 class="anchored" data-anchor-id="shapes-in-numpy">Shapes in NumPy</h2>
+<p>When working with NumPy, we can inspect the shape of an object using the <code>.shape</code> attribute.</p>
+<section id="scalar-1" class="level3">
+<h3 class="anchored" data-anchor-id="scalar-1">Scalar</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(<span class="dv">5</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>x.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="output-4" class="level4">
+<h4 class="anchored" data-anchor-id="output-4">Output</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Meaning:</strong> - No axes - 0-dimensional object</p>
+</section>
+</section>
+<section id="vector-1" class="level3">
+<h3 class="anchored" data-anchor-id="vector-1">Vector</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>x.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="output-5" class="level4">
+<h4 class="anchored" data-anchor-id="output-5">Output</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Meaning:</strong> - 3 elements - 1 dimension</p>
+</section>
+</section>
+<section id="matrix-1" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-1">Matrix</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array([</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>X.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="output-6" class="level4">
+<h4 class="anchored" data-anchor-id="output-6">Output</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Meaning:</strong> - 2 rows - 3 columns</p>
+</section>
+</section>
+<section id="tensor-1" class="level3">
+<h3 class="anchored" data-anchor-id="tensor-1">Tensor</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> np.array([</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]],</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    [[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]]</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>T.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="output-7" class="level4">
+<h4 class="anchored" data-anchor-id="output-7">Output</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Meaning:</strong> - 2 blocks - 2 rows - 2 columns</p>
+<p>The <strong>length of the shape tuple</strong> tells us the number of dimensions, while the <strong>values inside the tuple</strong> tell us the size along each dimension.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="matrices" class="level1">
+<h1>Matrices</h1>
+<p>Now that we understand scalars, vectors, and tensors, let’s focus on one of the most important mathematical tools in Machine Learning: the <strong>matrix</strong>.</p>
+<section id="what-is-a-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-matrix">What is a Matrix?</h2>
+<p>A matrix is a <strong>2-dimensional array</strong> of numbers arranged in rows and columns.</p>
+<section id="example-4" class="level3">
+<h3 class="anchored" data-anchor-id="example-4">Example</h3>
+<p><span class="math display">\[A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\]</span></p>
+<p>This matrix has 3 rows and 3 columns.</p>
+</section>
+<section id="shape" class="level3">
+<h3 class="anchored" data-anchor-id="shape">Shape</h3>
+<p><span class="math display">\[( 3, 3 )\]</span></p>
+</section>
+</section>
+<section id="why-are-matrices-important-in-ml" class="level2">
+<h2 class="anchored" data-anchor-id="why-are-matrices-important-in-ml">Why Are Matrices Important in ML?</h2>
+<p>Most machine learning datasets are represented as matrices. For example:</p>
+<p><span class="math display">\[X = \begin{bmatrix} 20 &amp; 170 &amp; 65 \\ 22 &amp; 175 &amp; 70 \\ 19 &amp; 168 &amp; 60 \end{bmatrix}\]</span></p>
+<p>Here: - Each row represents a data sample - Each column represents a feature</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Age</th>
+<th>Height</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20</td>
+<td>170</td>
+<td>65</td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td>175</td>
+<td>70</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>168</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p>This entire dataset can be stored as a single matrix.</p>
+</section>
+<section id="matrix-indexing-mathematical-notation" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-indexing-mathematical-notation">Matrix Indexing (Mathematical Notation)</h2>
+<p>Consider the matrix:</p>
+<p><span class="math display">\[A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\]</span></p>
+<p>We denote its entries by <span class="math inline">\(a_{ij}\)</span> where: - <span class="math inline">\(i\)</span> = row index - <span class="math inline">\(j\)</span> = column index</p>
+<section id="entry" class="level3">
+<h3 class="anchored" data-anchor-id="entry">Entry</h3>
+<p>The element at row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span> is called an <strong>entry</strong>.</p>
+<p>Example:</p>
+<p><span class="math display">\[a_{23} = 6\]</span></p>
+<p>because the entry in the <strong>2nd row</strong> and <strong>3rd column</strong> is 6.</p>
+<blockquote class="blockquote">
+<p>Mathematical indexing starts from <strong>1</strong>, not 0.</p>
+</blockquote>
+</section>
+<section id="row" class="level3">
+<h3 class="anchored" data-anchor-id="row">Row</h3>
+<p>The <span class="math inline">\(i\)</span>-th row is written as <span class="math inline">\(a_{i:}\)</span>.</p>
+<p>For example, the second row is <span class="math inline">\([4, 5, 6]\)</span>.</p>
+<p>In Machine Learning, a row usually represents a single data sample.</p>
+</section>
+<section id="column" class="level3">
+<h3 class="anchored" data-anchor-id="column">Column</h3>
+<p>The <span class="math inline">\(j\)</span>-th column is written as <span class="math inline">\(a_{:j}\)</span>.</p>
+<p>For example, the second column is:</p>
+<p><span class="math display">\[\begin{bmatrix} 2 \\ 5 \\ 8 \end{bmatrix}\]</span></p>
+<p>In Machine Learning, a column usually represents a feature.</p>
+</section>
+</section>
+<section id="matrix-representation-in-python" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-representation-in-python">Matrix Representation in Python</h2>
+<section id="using-nested-lists" class="level3">
+<h3 class="anchored" data-anchor-id="using-nested-lists">Using Nested Lists</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="using-numpy" class="level3">
+<h3 class="anchored" data-anchor-id="using-numpy">Using NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="shape-1" class="level3">
+<h3 class="anchored" data-anchor-id="shape-1">Shape</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>A.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-8" class="level3">
+<h3 class="anchored" data-anchor-id="output-8">Output</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+</section>
+<section id="matrix-operations" class="level1">
+<h1>Matrix Operations</h1>
+<p>Let:</p>
+<p><span class="math display">\[A = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}, \qquad B = \begin{bmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{bmatrix}\]</span></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">7</span>, <span class="dv">8</span>]</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="matrix-addition" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-addition">1. Matrix Addition</h2>
+<p>Matrix addition is performed by adding corresponding entries.</p>
+<section id="mathematically-4" class="level3">
+<h3 class="anchored" data-anchor-id="mathematically-4">Mathematically</h3>
+<p><span class="math display">\[A + B = \begin{bmatrix} 1+5 &amp; 2+6 \\ 3+7 &amp; 4+8 \end{bmatrix} = \begin{bmatrix} 6 &amp; 8 \\ 10 &amp; 12 \end{bmatrix}\]</span></p>
+</section>
+<section id="numpy-5" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-5">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">+</span> B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-9" class="level3">
+<h3 class="anchored" data-anchor-id="output-9">Output</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>array([</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    [ <span class="dv">6</span>,  <span class="dv">8</span>],</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">10</span>, <span class="dv">12</span>]</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="scalar-multiplication-2" class="level2">
+<h2 class="anchored" data-anchor-id="scalar-multiplication-2">2. Scalar Multiplication</h2>
+<p>Multiply every entry of the matrix by a scalar.</p>
+<section id="mathematically-5" class="level3">
+<h3 class="anchored" data-anchor-id="mathematically-5">Mathematically</h3>
+<p><span class="math display">\[2A = \begin{bmatrix} 2 &amp; 4 \\ 6 &amp; 8 \end{bmatrix}\]</span></p>
+</section>
+<section id="numpy-6" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-6">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> A</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-10" class="level3">
+<h3 class="anchored" data-anchor-id="output-10">Output</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>array([</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">6</span>, <span class="dv">8</span>]</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="hadamard-product-2" class="level2">
+<h2 class="anchored" data-anchor-id="hadamard-product-2">3. Hadamard Product</h2>
+<p>The Hadamard product is <strong>element-wise multiplication</strong>.</p>
+<section id="mathematically-6" class="level3">
+<h3 class="anchored" data-anchor-id="mathematically-6">Mathematically</h3>
+<p><span class="math display">\[A \odot B = \begin{bmatrix} 1 \times 5 &amp; 2 \times 6 \\ 3 \times 7 &amp; 4 \times 8 \end{bmatrix} = \begin{bmatrix} 5 &amp; 12 \\ 21 &amp; 32 \end{bmatrix}\]</span></p>
+</section>
+<section id="numpy-7" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-7">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">*</span> B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-11" class="level3">
+<h3 class="anchored" data-anchor-id="output-11">Output</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>array([</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    [ <span class="dv">5</span>, <span class="dv">12</span>],</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">21</span>, <span class="dv">32</span>]</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>Notice that <code>*</code> performs element-wise multiplication for NumPy arrays.</p>
+</blockquote>
+</section>
+</section>
+<section id="matrix-multiplication" class="level2">
+<h2 class="anchored" data-anchor-id="matrix-multiplication">4. Matrix Multiplication</h2>
+<p>Unlike the Hadamard product, matrix multiplication combines rows and columns.</p>
+<section id="mathematically-7" class="level3">
+<h3 class="anchored" data-anchor-id="mathematically-7">Mathematically</h3>
+<p><span class="math display">\[AB = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{bmatrix} \begin{bmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{bmatrix} = \begin{bmatrix} 19 &amp; 22 \\ 43 &amp; 50 \end{bmatrix}\]</span></p>
+</section>
+<section id="numpy-8" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-8">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">@</span> B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>np.matmul(A, B)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-12" class="level3">
+<h3 class="anchored" data-anchor-id="output-12">Output</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>array([</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">19</span>, <span class="dv">22</span>],</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">43</span>, <span class="dv">50</span>]</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For matrix multiplication, each entry is obtained by taking the <strong>dot product</strong> of a row from the first matrix and a column from the second matrix.</p>
+<p>For example:</p>
+<p><span class="math display">\[(AB)_{11} = (1 \times 5) + (2 \times 7) = 19\]</span></p>
+</section>
+</section>
+<section id="example-cgpa-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="example-cgpa-calculation">Example: CGPA Calculation</h2>
+<p>Suppose we have the grades of three students in three courses.</p>
+<p><span class="math display">\[G = \begin{bmatrix} 3.75 &amp; 3.50 &amp; 4.00 \\ 3.25 &amp; 3.75 &amp; 3.50 \\ 4.00 &amp; 3.75 &amp; 3.75 \end{bmatrix}\]</span></p>
+<p>Shape: <span class="math inline">\((3, 3)\)</span></p>
+<p>Rows represent students. Columns represent courses: - Mathematics - Physics - Programming</p>
+<p>Now suppose the credit hours are:</p>
+<p><span class="math display">\[C = \begin{bmatrix} 3 \\ 3 \\ 4 \end{bmatrix}\]</span></p>
+<p>Shape: <span class="math inline">\((3, 1)\)</span></p>
+<p>The weighted grade points are obtained by:</p>
+<p><span class="math display">\[GC = \begin{bmatrix} 3.75 &amp; 3.50 &amp; 4.00 \\ 3.25 &amp; 3.75 &amp; 3.50 \\ 4.00 &amp; 3.75 &amp; 3.75 \end{bmatrix} \begin{bmatrix} 3 \\ 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 37.75 \\ 35.50 \\ 38.25 \end{bmatrix}\]</span></p>
+<p>Each entry represents the total weighted grade points of a student.</p>
+<p>To get the CGPA, divide by the total credits:</p>
+<p><span class="math display">\[3 + 3 + 4 = 10\]</span></p>
+<p><span class="math display">\[\text{CGPA} = \begin{bmatrix} 3.775 \\ 3.550 \\ 3.825 \end{bmatrix}\]</span></p>
+<section id="numpy-9" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-9">NumPy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> np.array([</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">3.75</span>, <span class="fl">3.50</span>, <span class="fl">4.00</span>],</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">3.25</span>, <span class="fl">3.75</span>, <span class="fl">3.50</span>],</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">4.00</span>, <span class="fl">3.75</span>, <span class="fl">3.75</span>]</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> np.array([</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">3</span>],</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">3</span>],</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">4</span>]</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>weighted_points <span class="op">=</span> G <span class="op">@</span> C</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>cgpa <span class="op">=</span> weighted_points <span class="op">/</span> C.<span class="bu">sum</span>()</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cgpa)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

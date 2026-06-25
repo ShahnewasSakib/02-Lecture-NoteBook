@@ -1,0 +1,13 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Missing Semester CUET"
+  navbar:
+    background: dark
+
+format:
+  html:
+    theme: darkly  # এটি তোমার সাইটকে অটোমেটিক ব্ল্যাক করে দেবে
+    toc: true      # এটি ডানপাশে "On this page" টেবিল অফ কন্টেন্ট আনবে
