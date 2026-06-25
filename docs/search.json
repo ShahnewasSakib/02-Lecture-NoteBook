@@ -4,35 +4,35 @@
     "href": "Untitled1.html",
     "title": "Vectors",
     "section": "",
-    "text": "You already know about vectors from Physics — a quantity that has both direction and magnitude. Like Displacement, Velocity, Acceleration…\nIn 2D (Two-Dimensional) space, it can be represented as:\n\\[\\vec{A} = \\begin{bmatrix} A_x \\\\ A_y \\end{bmatrix}\\]\nwhere: - \\(A_x\\) = x-component - \\(A_y\\) = y-component\n\n\n\n\n3D Vector"
+    "text": "You already know about vectors from Physics — a quantity that has both direction and magnitude. Like Displacement, Velocity, Acceleration…\nIn 2D (Two-Dimensional) space, it can be represented as:\n\\[\\vec{A} = \\begin{bmatrix} A_x \\\\ A_y \\end{bmatrix}\\]\nwhere:\n\n\\(A_x\\) = x-component\n\\(A_y\\) = y-component\n\n\n\n\n\n3D Vector"
   },
   {
     "objectID": "Untitled1.html#what-is-a-vector",
     "href": "Untitled1.html#what-is-a-vector",
     "title": "Vectors",
     "section": "",
-    "text": "You already know about vectors from Physics — a quantity that has both direction and magnitude. Like Displacement, Velocity, Acceleration…\nIn 2D (Two-Dimensional) space, it can be represented as:\n\\[\\vec{A} = \\begin{bmatrix} A_x \\\\ A_y \\end{bmatrix}\\]\nwhere: - \\(A_x\\) = x-component - \\(A_y\\) = y-component\n\n\n\n\n3D Vector"
+    "text": "You already know about vectors from Physics — a quantity that has both direction and magnitude. Like Displacement, Velocity, Acceleration…\nIn 2D (Two-Dimensional) space, it can be represented as:\n\\[\\vec{A} = \\begin{bmatrix} A_x \\\\ A_y \\end{bmatrix}\\]\nwhere:\n\n\\(A_x\\) = x-component\n\\(A_y\\) = y-component\n\n\n\n\n\n3D Vector"
   },
   {
     "objectID": "Untitled1.html#but-is-it-the-same-as-vectors-in-csmath",
     "href": "Untitled1.html#but-is-it-the-same-as-vectors-in-csmath",
     "title": "Vectors",
     "section": "But is it the Same as Vectors in CS/Math?",
-    "text": "But is it the Same as Vectors in CS/Math?\nBefore answering that, let’s take a short journey into Dimensions.\n\nWhat is a Dimension?\nIn physics, a dimension is an independent direction in which movement or variation is possible. But we can simply think of it as the number of coordinates needed to describe a position.\n1-Dimensional (1D)\nOnly one coordinate is needed.\nExamples: * A number line * Position on a straight road\nRepresentation: \\[[x]\\]\n2-Dimensional (2D)\nTwo coordinates are needed.\nExamples: * A sheet of paper * A computer screen\nRepresentation: \\[[(x, y)]\\]\n3-Dimensional (3D)\nThree coordinates are needed.\nExamples: * Physical space * Real-world objects\nRepresentation: \\[[(x, y, z)]\\]\nExample: \\[[(3, 4, 5)]\\]\nBut what about beyond 3 Dimensions?\nMathematics is not limited to physical space.\nA point can have any number of coordinates:\n\\[(x_1, x_2, x_3, \\dots, x_n)\\]\nExample:\n\\[(20, 170, 65, 3.8)\\]\nThis point exists in 4-dimensional space."
+    "text": "But is it the Same as Vectors in CS/Math?\nBefore answering that, let’s take a short journey into Dimensions.\n\nWhat is a Dimension?\nIn physics, a dimension is an independent direction in which movement or variation is possible. But we can simply think of it as the number of coordinates needed to describe a position.\n1-Dimensional (1D)\nOnly one coordinate is needed.\nExamples:\n\nA number line\nPosition on a straight road\n\nRepresentation: \\[[x]\\]\n2-Dimensional (2D)\nTwo coordinates are needed.\nExamples:\n\nA sheet of paper\nA computer screen\n\nRepresentation: \\[[(x, y)]\\]\n3-Dimensional (3D)\nThree coordinates are needed.\nExamples:\n\nPhysical space\nReal-world objects\n\nRepresentation: \\[[(x, y, z)]\\]\nExample: \\[[(3, 4, 5)]\\]\nBut what about beyond 3 Dimensions?\nMathematics is not limited to physical space.\nA point can have any number of coordinates:\n\\[(x_1, x_2, x_3, \\dots, x_n)\\]\nExample:\n\\[(20, 170, 65, 3.8)\\]\nThis point exists in 4-dimensional space."
   },
   {
     "objectID": "Untitled1.html#dimension-in-machine-learning",
     "href": "Untitled1.html#dimension-in-machine-learning",
     "title": "Vectors",
     "section": "Dimension in Machine Learning",
-    "text": "Dimension in Machine Learning\nIn Machine Learning, each feature corresponds to one dimension.\nExample:\nA student described by: * Age * Height * Weight\ncan be represented as:\n\\[[(20, 170, 65)]\\]\nThis is a point in a 3-dimensional feature space.\nIf we add CGPA:\n\\[[(20, 170, 65, 3.8)]\\]\nthe data point becomes 4-dimensional."
+    "text": "Dimension in Machine Learning\nIn Machine Learning, each feature corresponds to one dimension.\nExample:\nA student described by:\n\nAge\nHeight\nWeight\n\ncan be represented as:\n\\[[(20, 170, 65)]\\]\nThis is a point in a 3-dimensional feature space.\nIf we add CGPA:\n\\[[(20, 170, 65, 3.8)]\\]\nthe data point becomes 4-dimensional."
   },
   {
     "objectID": "Untitled1.html#vectors-in-mathematics-and-computer-science",
     "href": "Untitled1.html#vectors-in-mathematics-and-computer-science",
     "title": "Vectors",
     "section": "Vectors in Mathematics and Computer Science",
-    "text": "Vectors in Mathematics and Computer Science\nNow let’s go back to our previous topic.\n\nSame Idea as Physics\nA vector in mathematics is fundamentally the same concept as in physics.\nIn mathematics and computer science, we usually focus on the coordinates that describe the vector. For example:\n\\[\\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}\\]\ncan be interpreted as: * A displacement of 3 units along the x-axis and 4 units along the y-axis * A point in a 2-dimensional space * A data sample with two features\nThe underlying idea is the same.\n\n\nWhy This Representation is Better\nDrawing vectors works well in 2D and 3D. However, Machine Learning often deals with hundreds or thousands of dimensions.\nFor example, a student’s data may be represented as:\n\\[[20, 170, 65, 3.8]\\]\nA modern dataset may contain:\n\\[[x_1, x_2, x_3, \\dots, x_{1000}]\\]\nA 1000-dimensional vector cannot be visualized geometrically. Representing vectors as ordered lists of numbers allows us to work in any number of dimensions.\n\n\nA Vector as a Point\nA vector can be viewed as a location in space.\nExample:\n\\[\\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}\\]\nrepresents the point \\((3, 4)\\) in 2-dimensional space.\nSimilarly:\n\\[\\begin{bmatrix} 2 \\\\ 5 \\\\ 7 \\end{bmatrix}\\]\nrepresents a point in 3-dimensional space.\n\n\nColumn Vectors\nThe standard representation in linear algebra is the column vector.\n\\[\\mathbf{x} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}\\]\nDimension: \\(3 \\times 1\\), meaning: * 3 rows * 1 column\nMost linear algebra formulas assume vectors are column vectors.\n\n\nRow Vectors\nA vector can also be written horizontally.\n\\[\\mathbf{x} = \\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}\\]\nDimension: \\(1 \\times 3\\), meaning: * 1 row * 3 columns\nThis is called a row vector.\n\n\nWhy Do We Need Both?\nMany matrix operations require specific orientations.\nFor example:\n\\[\\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix} \\begin{bmatrix} 4 \\\\ 5 \\\\ 6 \\end{bmatrix}\\]\nis valid matrix multiplication and produces a scalar.\nThe first vector is a row vector.\nThe second is a column vector.\nSo distinguishing between row and column vectors becomes important in linear algebra and machine learning."
+    "text": "Vectors in Mathematics and Computer Science\nNow let’s go back to our previous topic.\n\nSame Idea as Physics\nA vector in mathematics is fundamentally the same concept as in physics.\nIn mathematics and computer science, we usually focus on the coordinates that describe the vector. For example:\n\\[\\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}\\]\ncan be interpreted as:\n\nA displacement of 3 units along the x-axis and 4 units along the y-axis\nA point in a 2-dimensional space\nA data sample with two features\n\nThe underlying idea is the same.\n\n\nWhy This Representation is Better\nDrawing vectors works well in 2D and 3D. However, Machine Learning often deals with hundreds or thousands of dimensions.\nFor example, a student’s data may be represented as:\n\\[[20, 170, 65, 3.8]\\]\nA modern dataset may contain:\n\\[[x_1, x_2, x_3, \\dots, x_{1000}]\\]\nA 1000-dimensional vector cannot be visualized geometrically. Representing vectors as ordered lists of numbers allows us to work in any number of dimensions.\n\n\nA Vector as a Point\nA vector can be viewed as a location in space.\nExample:\n\\[\\begin{bmatrix} 3 \\\\ 4 \\end{bmatrix}\\]\nrepresents the point \\((3, 4)\\) in 2-dimensional space.\nSimilarly:\n\\[\\begin{bmatrix} 2 \\\\ 5 \\\\ 7 \\end{bmatrix}\\]\nrepresents a point in 3-dimensional space.\n\n\nColumn Vectors\nThe standard representation in linear algebra is the column vector.\n\\[\\mathbf{x} = \\begin{bmatrix} 1 \\\\ 2 \\\\ 3 \\end{bmatrix}\\]\nDimension: \\(3 \\times 1\\), meaning:\n\n3 rows\n1 column\n\nMost linear algebra formulas assume vectors are column vectors.\n\n\nRow Vectors\nA vector can also be written horizontally.\n\\[\\mathbf{x} = \\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix}\\]\nDimension: \\(1 \\times 3\\), meaning:\n\n1 row\n3 columns\n\nThis is called a row vector.\n\n\nWhy Do We Need Both?\nMany matrix operations require specific orientations.\nFor example:\n\\[\\begin{bmatrix} 1 & 2 & 3 \\end{bmatrix} \\begin{bmatrix} 4 \\\\ 5 \\\\ 6 \\end{bmatrix}\\]\nis valid matrix multiplication and produces a scalar.\nThe first vector is a row vector.\nThe second is a column vector.\nSo distinguishing between row and column vectors becomes important in linear algebra and machine learning."
   },
   {
     "objectID": "Untitled1.html#order",
@@ -53,14 +53,14 @@
     "href": "Untitled1.html#why-vectors-are-used-in-machine-learning",
     "title": "Vectors",
     "section": "Why Vectors Are Used in Machine Learning",
-    "text": "Why Vectors Are Used in Machine Learning\nMachine Learning data has: * Ordered features * Repeated values\nFor example:\n\\[[20, 20, 65, 65]\\]\nis perfectly valid data. Since order and duplicates both matter, vectors are a natural representation for data — sets are not."
+    "text": "Why Vectors Are Used in Machine Learning\nMachine Learning data has:\n\nOrdered features\nRepeated values\n\nFor example:\n\\[[20, 20, 65, 65]\\]\nis perfectly valid data. Since order and duplicates both matter, vectors are a natural representation for data — sets are not."
   },
   {
     "objectID": "Untitled1.html#a-note-for-machine-learning",
     "href": "Untitled1.html#a-note-for-machine-learning",
     "title": "Vectors",
     "section": "A Note for Machine Learning",
-    "text": "A Note for Machine Learning\nIn mathematics and physics, you may have learned two common types of vector multiplication: * Dot Product * Cross Product\nHowever, in Machine Learning, the Cross Product is rarely used. Instead, the two vector products you will encounter most often are: * Hadamard Product (element-wise multiplication) * Dot Product\n\nMathematical Notation\nHadamard Product:\n\\[\\mathbf{a} \\odot \\mathbf{b}\\]\nDot Product:\n\\[\\mathbf{a} \\cdot \\mathbf{b}\\]"
+    "text": "A Note for Machine Learning\nIn mathematics and physics, you may have learned two common types of vector multiplication:\n\nDot Product\nCross Product\n\nHowever, in Machine Learning, the Cross Product is rarely used. Instead, the two vector products you will encounter most often are:\n\nHadamard Product (element-wise multiplication)\nDot Product\n\n\nMathematical Notation\nHadamard Product:\n\\[\\mathbf{a} \\odot \\mathbf{b}\\]\nDot Product:\n\\[\\mathbf{a} \\cdot \\mathbf{b}\\]"
   },
   {
     "objectID": "Untitled1.html#what-is-numpy",
@@ -109,28 +109,28 @@
     "href": "Untitled1.html#scalar",
     "title": "Vectors",
     "section": "1. Scalar",
-    "text": "1. Scalar\nA scalar is a single number.\n\nExamples\n\\[5 \\qquad 3.14 \\qquad -2\\]\n\n\nDimension\nA scalar has 0 dimensions (0D).\n\n\nPython Representation\nx = 5\n\n\nWhen Is It Used?\nScalars are used to represent: - A single measurement - A constant - A model parameter - The result of a dot product\n\n\nExample\ntemperature = 32\nlearning_rate = 0.01"
+    "text": "1. Scalar\nA scalar is a single number.\n\nExamples\n\\[5 \\qquad 3.14 \\qquad -2\\]\n\n\nDimension\nA scalar has 0 dimensions (0D).\n\n\nPython Representation\nx = 5\n\n\nWhen Is It Used?\nScalars are used to represent:\n\nA single measurement\nA constant\nA model parameter\nThe result of a dot product\n\n\n\nExample\ntemperature = 32\nlearning_rate = 0.01"
   },
   {
     "objectID": "Untitled1.html#vector",
     "href": "Untitled1.html#vector",
     "title": "Vectors",
     "section": "2. Vector",
-    "text": "2. Vector\nA vector is an ordered collection of numbers.\n\nExamples\n\\[[1, 2, 3] \\qquad [20, 170, 65]\\]\n\n\nDimension\nA vector has 1 dimension (1D).\n\n\nPython Representation\nx = [1, 2, 3]\n\n\nWhen Is It Used?\nVectors are commonly used to represent: - Features of a data sample - Coordinates of a point - Weights of a model\n\n\nExample\nstudent = [20, 170, 65]\n# age, height, weight"
+    "text": "2. Vector\nA vector is an ordered collection of numbers.\n\nExamples\n\\[[1, 2, 3] \\qquad [20, 170, 65]\\]\n\n\nDimension\nA vector has 1 dimension (1D).\n\n\nPython Representation\nx = [1, 2, 3]\n\n\nWhen Is It Used?\nVectors are commonly used to represent:\n\nFeatures of a data sample\nCoordinates of a point\nWeights of a model\n\n\n\nExample\nstudent = [20, 170, 65]\n# age, height, weight"
   },
   {
     "objectID": "Untitled1.html#matrix",
     "href": "Untitled1.html#matrix",
     "title": "Vectors",
     "section": "3. Matrix",
-    "text": "3. Matrix\nA matrix is a collection of vectors arranged in rows and columns.\n\nExample\n\\[\\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}\\]\n\n\nDimension\nA matrix has 2 dimensions (2D): - Rows - Columns\nThe matrix above has shape \\(2 \\times 3\\).\n\n\nPython Representation\nX = [\n    [1, 2, 3],\n    [4, 5, 6]\n]\n\n\nWhen Is It Used?\nMatrices are commonly used to represent datasets.\n\n\nExample\nstudents = [\n    [20, 170, 65],\n    [22, 175, 70],\n    [19, 168, 60]\n]\nEach row represents a student. Each column represents a feature."
+    "text": "3. Matrix\nA matrix is a collection of vectors arranged in rows and columns.\n\nExample\n\\[\\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\end{bmatrix}\\]\n\n\nDimension\nA matrix has 2 dimensions (2D):\n\nRows\nColumns\n\nThe matrix above has shape \\(2 \\times 3\\).\n\n\nPython Representation\nX = [\n    [1, 2, 3],\n    [4, 5, 6]\n]\n\n\nWhen Is It Used?\nMatrices are commonly used to represent datasets.\n\n\nExample\nstudents = [\n    [20, 170, 65],\n    [22, 175, 70],\n    [19, 168, 60]\n]\nEach row represents a student. Each column represents a feature."
   },
   {
     "objectID": "Untitled1.html#tensor",
     "href": "Untitled1.html#tensor",
     "title": "Vectors",
     "section": "4. Tensor",
-    "text": "4. Tensor\nA tensor is a generalization of vectors and matrices to higher dimensions.\n\nExamples\n\n3D tensor\n4D tensor\n5D tensor\nn-dimensional tensor\n\n\n\nDimension\nA tensor has 3 or more dimensions.\n\n\nPython Representation\ntensor = [\n    [\n        [1, 2],\n        [3, 4]\n    ],\n    [\n        [5, 6],\n        [7, 8]\n    ]\n]\nThis is a 3D tensor.\n\n\nWhen Is It Used?\nTensors are heavily used in Deep Learning. Examples include: - Color images - Videos - Batches of training data - Neural network activations"
+    "text": "4. Tensor\nA tensor is a generalization of vectors and matrices to higher dimensions.\n\nExamples\n\n3D tensor\n4D tensor\n5D tensor\nn-dimensional tensor\n\n\n\nDimension\nA tensor has 3 or more dimensions.\n\n\nPython Representation\ntensor = [\n    [\n        [1, 2],\n        [3, 4]\n    ],\n    [\n        [5, 6],\n        [7, 8]\n    ]\n]\nThis is a 3D tensor.\n\n\nWhen Is It Used?\nTensors are heavily used in Deep Learning. Examples include:\n\nColor images\nVideos\nBatches of training data\nNeural network activations"
   },
   {
     "objectID": "Untitled1.html#image-example",
@@ -144,7 +144,7 @@
     "href": "Untitled1.html#shapes-in-numpy",
     "title": "Vectors",
     "section": "Shapes in NumPy",
-    "text": "Shapes in NumPy\nWhen working with NumPy, we can inspect the shape of an object using the .shape attribute.\n\nScalar\nimport numpy as np\n\nx = np.array(5)\nx.shape\n\nOutput\n()\nMeaning: - No axes - 0-dimensional object\n\n\n\nVector\nx = np.array([1, 2, 3])\nx.shape\n\nOutput\n(3,)\nMeaning: - 3 elements - 1 dimension\n\n\n\nMatrix\nX = np.array([\n    [1, 2, 3],\n    [4, 5, 6]\n])\n\nX.shape\n\nOutput\n(2, 3)\nMeaning: - 2 rows - 3 columns\n\n\n\nTensor\nT = np.array([\n    [[1, 2], [3, 4]],\n    [[5, 6], [7, 8]]\n])\n\nT.shape\n\nOutput\n(2, 2, 2)\nMeaning: - 2 blocks - 2 rows - 2 columns\nThe length of the shape tuple tells us the number of dimensions, while the values inside the tuple tell us the size along each dimension."
+    "text": "Shapes in NumPy\nWhen working with NumPy, we can inspect the shape of an object using the .shape attribute.\n\nScalar\nimport numpy as np\n\nx = np.array(5)\nx.shape\n\nOutput\n()\nMeaning:\n\nNo axes\n0-dimensional object\n\n\n\n\nVector\nx = np.array([1, 2, 3])\nx.shape\n\nOutput\n(3,)\nMeaning:\n\n3 elements\n1 dimension\n\n\n\n\nMatrix\nX = np.array([\n    [1, 2, 3],\n    [4, 5, 6]\n])\n\nX.shape\n\nOutput\n(2, 3)\nMeaning:\n\n2 rows\n3 columns\n\n\n\n\nTensor\nT = np.array([\n    [[1, 2], [3, 4]],\n    [[5, 6], [7, 8]]\n])\n\nT.shape\n\nOutput\n(2, 2, 2)\nMeaning:\n\n2 blocks\n2 rows\n2 columns\n\nThe length of the shape tuple tells us the number of dimensions, while the values inside the tuple tell us the size along each dimension."
   },
   {
     "objectID": "Untitled1.html#what-is-a-matrix",
@@ -165,7 +165,7 @@
     "href": "Untitled1.html#matrix-indexing-mathematical-notation",
     "title": "Vectors",
     "section": "Matrix Indexing (Mathematical Notation)",
-    "text": "Matrix Indexing (Mathematical Notation)\nConsider the matrix:\n\\[A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9 \\end{bmatrix}\\]\nWe denote its entries by \\(a_{ij}\\) where: - \\(i\\) = row index - \\(j\\) = column index\n\nEntry\nThe element at row \\(i\\) and column \\(j\\) is called an entry.\nExample:\n\\[a_{23} = 6\\]\nbecause the entry in the 2nd row and 3rd column is 6.\n\nMathematical indexing starts from 1, not 0.\n\n\n\nRow\nThe \\(i\\)-th row is written as \\(a_{i:}\\).\nFor example, the second row is \\([4, 5, 6]\\).\nIn Machine Learning, a row usually represents a single data sample.\n\n\nColumn\nThe \\(j\\)-th column is written as \\(a_{:j}\\).\nFor example, the second column is:\n\\[\\begin{bmatrix} 2 \\\\ 5 \\\\ 8 \\end{bmatrix}\\]\nIn Machine Learning, a column usually represents a feature."
+    "text": "Matrix Indexing (Mathematical Notation)\nConsider the matrix:\n\\[A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 4 & 5 & 6 \\\\ 7 & 8 & 9 \\end{bmatrix}\\]\nWe denote its entries by \\(a_{ij}\\) where:\n\n\\(i\\) = row index\n\\(j\\) = column index\n\n\nEntry\nThe element at row \\(i\\) and column \\(j\\) is called an entry.\nExample:\n\\[a_{23} = 6\\]\nbecause the entry in the 2nd row and 3rd column is 6.\n\nMathematical indexing starts from 1, not 0.\n\n\n\nRow\nThe \\(i\\)-th row is written as \\(a_{i:}\\).\nFor example, the second row is \\([4, 5, 6]\\).\nIn Machine Learning, a row usually represents a single data sample.\n\n\nColumn\nThe \\(j\\)-th column is written as \\(a_{:j}\\).\nFor example, the second column is:\n\\[\\begin{bmatrix} 2 \\\\ 5 \\\\ 8 \\end{bmatrix}\\]\nIn Machine Learning, a column usually represents a feature."
   },
   {
     "objectID": "Untitled1.html#matrix-representation-in-python",
@@ -207,6 +207,6 @@
     "href": "Untitled1.html#example-cgpa-calculation",
     "title": "Vectors",
     "section": "Example: CGPA Calculation",
-    "text": "Example: CGPA Calculation\nSuppose we have the grades of three students in three courses.\n\\[G = \\begin{bmatrix} 3.75 & 3.50 & 4.00 \\\\ 3.25 & 3.75 & 3.50 \\\\ 4.00 & 3.75 & 3.75 \\end{bmatrix}\\]\nShape: \\((3, 3)\\)\nRows represent students. Columns represent courses: - Mathematics - Physics - Programming\nNow suppose the credit hours are:\n\\[C = \\begin{bmatrix} 3 \\\\ 3 \\\\ 4 \\end{bmatrix}\\]\nShape: \\((3, 1)\\)\nThe weighted grade points are obtained by:\n\\[GC = \\begin{bmatrix} 3.75 & 3.50 & 4.00 \\\\ 3.25 & 3.75 & 3.50 \\\\ 4.00 & 3.75 & 3.75 \\end{bmatrix} \\begin{bmatrix} 3 \\\\ 3 \\\\ 4 \\end{bmatrix} = \\begin{bmatrix} 37.75 \\\\ 35.50 \\\\ 38.25 \\end{bmatrix}\\]\nEach entry represents the total weighted grade points of a student.\nTo get the CGPA, divide by the total credits:\n\\[3 + 3 + 4 = 10\\]\n\\[\\text{CGPA} = \\begin{bmatrix} 3.775 \\\\ 3.550 \\\\ 3.825 \\end{bmatrix}\\]\n\nNumPy\nimport numpy as np\n\nG = np.array([\n    [3.75, 3.50, 4.00],\n    [3.25, 3.75, 3.50],\n    [4.00, 3.75, 3.75]\n])\n\nC = np.array([\n    [3],\n    [3],\n    [4]\n])\n\nweighted_points = G @ C\n\ncgpa = weighted_points / C.sum()\n\nprint(cgpa)"
+    "text": "Example: CGPA Calculation\nSuppose we have the grades of three students in three courses.\n\\[G = \\begin{bmatrix} 3.75 & 3.50 & 4.00 \\\\ 3.25 & 3.75 & 3.50 \\\\ 4.00 & 3.75 & 3.75 \\end{bmatrix}\\]\nShape: \\((3, 3)\\)\nRows represent students. Columns represent courses:\n\nMathematics\nPhysics\nProgramming\n\nNow suppose the credit hours are:\n\\[C = \\begin{bmatrix} 3 \\\\ 3 \\\\ 4 \\end{bmatrix}\\]\nShape: \\((3, 1)\\)\nThe weighted grade points are obtained by:\n\\[GC = \\begin{bmatrix} 3.75 & 3.50 & 4.00 \\\\ 3.25 & 3.75 & 3.50 \\\\ 4.00 & 3.75 & 3.75 \\end{bmatrix} \\begin{bmatrix} 3 \\\\ 3 \\\\ 4 \\end{bmatrix} = \\begin{bmatrix} 37.75 \\\\ 35.50 \\\\ 38.25 \\end{bmatrix}\\]\nEach entry represents the total weighted grade points of a student.\nTo get the CGPA, divide by the total credits:\n\\[3 + 3 + 4 = 10\\]\n\\[\\text{CGPA} = \\begin{bmatrix} 3.775 \\\\ 3.550 \\\\ 3.825 \\end{bmatrix}\\]\n\nNumPy\nimport numpy as np\n\nG = np.array([\n    [3.75, 3.50, 4.00],\n    [3.25, 3.75, 3.50],\n    [4.00, 3.75, 3.75]\n])\n\nC = np.array([\n    [3],\n    [3],\n    [4]\n])\n\nweighted_points = G @ C\n\ncgpa = weighted_points / C.sum()\n\nprint(cgpa)"
   }
 ]

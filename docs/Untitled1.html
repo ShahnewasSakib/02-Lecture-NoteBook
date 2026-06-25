@@ -358,7 +358,11 @@ window.Quarto = {
 <p>You already know about vectors from Physics — a quantity that has both <strong>direction</strong> and <strong>magnitude</strong>. Like Displacement, Velocity, Acceleration…</p>
 <p>In 2D (Two-Dimensional) space, it can be represented as:</p>
 <p><span class="math display">\[\vec{A} = \begin{bmatrix} A_x \\ A_y \end{bmatrix}\]</span></p>
-<p>where: - <span class="math inline">\(A_x\)</span> = x-component - <span class="math inline">\(A_y\)</span> = y-component</p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(A_x\)</span> = x-component</li>
+<li><span class="math inline">\(A_y\)</span> = y-component</li>
+</ul>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -375,15 +379,27 @@ window.Quarto = {
 <p>In physics, a dimension is an independent direction in which movement or variation is possible. But we can simply think of it as the number of coordinates needed to describe a position.</p>
 <p><strong>1-Dimensional (1D)</strong><br>
 Only one coordinate is needed.</p>
-<p>Examples: * A number line * Position on a straight road</p>
+<p>Examples:</p>
+<ul>
+<li>A number line</li>
+<li>Position on a straight road</li>
+</ul>
 <p>Representation: <span class="math display">\[[x]\]</span></p>
 <p><strong>2-Dimensional (2D)</strong><br>
 Two coordinates are needed.</p>
-<p>Examples: * A sheet of paper * A computer screen</p>
+<p>Examples:</p>
+<ul>
+<li>A sheet of paper</li>
+<li>A computer screen</li>
+</ul>
 <p>Representation: <span class="math display">\[[(x, y)]\]</span></p>
 <p><strong>3-Dimensional (3D)</strong><br>
 Three coordinates are needed.</p>
-<p>Examples: * Physical space * Real-world objects</p>
+<p>Examples:</p>
+<ul>
+<li>Physical space</li>
+<li>Real-world objects</li>
+</ul>
 <p>Representation: <span class="math display">\[[(x, y, z)]\]</span></p>
 <p>Example: <span class="math display">\[[(3, 4, 5)]\]</span></p>
 <p>But what about <strong>beyond 3 Dimensions</strong>?<br>
@@ -399,7 +415,12 @@ A point can have any number of coordinates:</p>
 <h2 class="anchored" data-anchor-id="dimension-in-machine-learning">Dimension in Machine Learning</h2>
 <p>In Machine Learning, each feature corresponds to one dimension.</p>
 <p>Example:</p>
-<p>A student described by: * Age * Height * Weight</p>
+<p>A student described by:</p>
+<ul>
+<li>Age</li>
+<li>Height</li>
+<li>Weight</li>
+</ul>
 <p>can be represented as:</p>
 <p><span class="math display">\[[(20, 170, 65)]\]</span></p>
 <p>This is a point in a 3-dimensional feature space.</p>
@@ -415,7 +436,12 @@ A point can have any number of coordinates:</p>
 <p>A vector in mathematics is fundamentally the same concept as in physics.</p>
 <p>In mathematics and computer science, we usually focus on the coordinates that describe the vector. For example:</p>
 <p><span class="math display">\[\begin{bmatrix} 3 \\ 4 \end{bmatrix}\]</span></p>
-<p>can be interpreted as: * A displacement of 3 units along the x-axis and 4 units along the y-axis * A point in a 2-dimensional space * A data sample with two features</p>
+<p>can be interpreted as:</p>
+<ul>
+<li>A displacement of 3 units along the x-axis and 4 units along the y-axis</li>
+<li>A point in a 2-dimensional space</li>
+<li>A data sample with two features</li>
+</ul>
 <p>The underlying idea is the same.</p>
 </section>
 <section id="why-this-representation-is-better" class="level3">
@@ -441,14 +467,22 @@ A point can have any number of coordinates:</p>
 <h3 class="anchored" data-anchor-id="column-vectors">Column Vectors</h3>
 <p>The standard representation in linear algebra is the column vector.</p>
 <p><span class="math display">\[\mathbf{x} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\]</span></p>
-<p>Dimension: <span class="math inline">\(3 \times 1\)</span>, meaning: * 3 rows * 1 column</p>
+<p>Dimension: <span class="math inline">\(3 \times 1\)</span>, meaning:</p>
+<ul>
+<li>3 rows</li>
+<li>1 column</li>
+</ul>
 <p>Most linear algebra formulas assume vectors are column vectors.</p>
 </section>
 <section id="row-vectors" class="level3">
 <h3 class="anchored" data-anchor-id="row-vectors">Row Vectors</h3>
 <p>A vector can also be written horizontally.</p>
 <p><span class="math display">\[\mathbf{x} = \begin{bmatrix} 1 &amp; 2 &amp; 3 \end{bmatrix}\]</span></p>
-<p>Dimension: <span class="math inline">\(1 \times 3\)</span>, meaning: * 1 row * 3 columns</p>
+<p>Dimension: <span class="math inline">\(1 \times 3\)</span>, meaning:</p>
+<ul>
+<li>1 row</li>
+<li>3 columns</li>
+</ul>
 <p>This is called a row vector.</p>
 </section>
 <section id="why-do-we-need-both" class="level3">
@@ -491,7 +525,11 @@ The second is a column vector.</p>
 </section>
 <section id="why-vectors-are-used-in-machine-learning" class="level2">
 <h2 class="anchored" data-anchor-id="why-vectors-are-used-in-machine-learning">Why Vectors Are Used in Machine Learning</h2>
-<p>Machine Learning data has: * Ordered features * Repeated values</p>
+<p>Machine Learning data has:</p>
+<ul>
+<li>Ordered features</li>
+<li>Repeated values</li>
+</ul>
 <p>For example:</p>
 <p><span class="math display">\[[20, 20, 65, 65]\]</span></p>
 <p>is perfectly valid data. Since order and duplicates both matter, vectors are a natural representation for data — sets are not.</p>
@@ -525,8 +563,16 @@ The second is a column vector.</p>
 </section>
 <section id="a-note-for-machine-learning" class="level2">
 <h2 class="anchored" data-anchor-id="a-note-for-machine-learning">A Note for Machine Learning</h2>
-<p>In mathematics and physics, you may have learned two common types of vector multiplication: * Dot Product * Cross Product</p>
-<p>However, in Machine Learning, the Cross Product is rarely used. Instead, the two vector products you will encounter most often are: * Hadamard Product (element-wise multiplication) * Dot Product</p>
+<p>In mathematics and physics, you may have learned two common types of vector multiplication:</p>
+<ul>
+<li>Dot Product</li>
+<li>Cross Product</li>
+</ul>
+<p>However, in Machine Learning, the Cross Product is rarely used. Instead, the two vector products you will encounter most often are:</p>
+<ul>
+<li>Hadamard Product (element-wise multiplication)</li>
+<li>Dot Product</li>
+</ul>
 <section id="mathematical-notation" class="level3">
 <h3 class="anchored" data-anchor-id="mathematical-notation">Mathematical Notation</h3>
 <p>Hadamard Product:</p>
@@ -654,7 +700,13 @@ The second is a column vector.</p>
 </section>
 <section id="when-is-it-used" class="level3">
 <h3 class="anchored" data-anchor-id="when-is-it-used">When Is It Used?</h3>
-<p>Scalars are used to represent: - A single measurement - A constant - A model parameter - The result of a dot product</p>
+<p>Scalars are used to represent:</p>
+<ul>
+<li>A single measurement</li>
+<li>A constant</li>
+<li>A model parameter</li>
+<li>The result of a dot product</li>
+</ul>
 </section>
 <section id="example" class="level3">
 <h3 class="anchored" data-anchor-id="example">Example</h3>
@@ -679,7 +731,12 @@ The second is a column vector.</p>
 </section>
 <section id="when-is-it-used-1" class="level3">
 <h3 class="anchored" data-anchor-id="when-is-it-used-1">When Is It Used?</h3>
-<p>Vectors are commonly used to represent: - Features of a data sample - Coordinates of a point - Weights of a model</p>
+<p>Vectors are commonly used to represent:</p>
+<ul>
+<li>Features of a data sample</li>
+<li>Coordinates of a point</li>
+<li>Weights of a model</li>
+</ul>
 </section>
 <section id="example-1" class="level3">
 <h3 class="anchored" data-anchor-id="example-1">Example</h3>
@@ -696,7 +753,11 @@ The second is a column vector.</p>
 </section>
 <section id="dimension-2" class="level3">
 <h3 class="anchored" data-anchor-id="dimension-2">Dimension</h3>
-<p>A matrix has <strong>2 dimensions (2D)</strong>: - Rows - Columns</p>
+<p>A matrix has <strong>2 dimensions (2D)</strong>:</p>
+<ul>
+<li>Rows</li>
+<li>Columns</li>
+</ul>
 <p>The matrix above has shape <span class="math inline">\(2 \times 3\)</span>.</p>
 </section>
 <section id="python-representation-2" class="level3">
@@ -752,7 +813,13 @@ The second is a column vector.</p>
 </section>
 <section id="when-is-it-used-3" class="level3">
 <h3 class="anchored" data-anchor-id="when-is-it-used-3">When Is It Used?</h3>
-<p>Tensors are heavily used in Deep Learning. Examples include: - Color images - Videos - Batches of training data - Neural network activations</p>
+<p>Tensors are heavily used in Deep Learning. Examples include:</p>
+<ul>
+<li>Color images</li>
+<li>Videos</li>
+<li>Batches of training data</li>
+<li>Neural network activations</li>
+</ul>
 </section>
 </section>
 <section id="image-example" class="level2">
@@ -788,7 +855,11 @@ The second is a column vector.</p>
 <section id="output-4" class="level4">
 <h4 class="anchored" data-anchor-id="output-4">Output</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Meaning:</strong> - No axes - 0-dimensional object</p>
+<p><strong>Meaning:</strong></p>
+<ul>
+<li>No axes</li>
+<li>0-dimensional object</li>
+</ul>
 </section>
 </section>
 <section id="vector-1" class="level3">
@@ -798,7 +869,11 @@ The second is a column vector.</p>
 <section id="output-5" class="level4">
 <h4 class="anchored" data-anchor-id="output-5">Output</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>,)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Meaning:</strong> - 3 elements - 1 dimension</p>
+<p><strong>Meaning:</strong></p>
+<ul>
+<li>3 elements</li>
+<li>1 dimension</li>
+</ul>
 </section>
 </section>
 <section id="matrix-1" class="level3">
@@ -812,7 +887,11 @@ The second is a column vector.</p>
 <section id="output-6" class="level4">
 <h4 class="anchored" data-anchor-id="output-6">Output</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Meaning:</strong> - 2 rows - 3 columns</p>
+<p><strong>Meaning:</strong></p>
+<ul>
+<li>2 rows</li>
+<li>3 columns</li>
+</ul>
 </section>
 </section>
 <section id="tensor-1" class="level3">
@@ -826,7 +905,12 @@ The second is a column vector.</p>
 <section id="output-7" class="level4">
 <h4 class="anchored" data-anchor-id="output-7">Output</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Meaning:</strong> - 2 blocks - 2 rows - 2 columns</p>
+<p><strong>Meaning:</strong></p>
+<ul>
+<li>2 blocks</li>
+<li>2 rows</li>
+<li>2 columns</li>
+</ul>
 <p>The <strong>length of the shape tuple</strong> tells us the number of dimensions, while the <strong>values inside the tuple</strong> tell us the size along each dimension.</p>
 </section>
 </section>
@@ -885,7 +969,11 @@ The second is a column vector.</p>
 <h2 class="anchored" data-anchor-id="matrix-indexing-mathematical-notation">Matrix Indexing (Mathematical Notation)</h2>
 <p>Consider the matrix:</p>
 <p><span class="math display">\[A = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\]</span></p>
-<p>We denote its entries by <span class="math inline">\(a_{ij}\)</span> where: - <span class="math inline">\(i\)</span> = row index - <span class="math inline">\(j\)</span> = column index</p>
+<p>We denote its entries by <span class="math inline">\(a_{ij}\)</span> where:</p>
+<ul>
+<li><span class="math inline">\(i\)</span> = row index</li>
+<li><span class="math inline">\(j\)</span> = column index</li>
+</ul>
 <section id="entry" class="level3">
 <h3 class="anchored" data-anchor-id="entry">Entry</h3>
 <p>The element at row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span> is called an <strong>entry</strong>.</p>
@@ -1044,7 +1132,12 @@ The second is a column vector.</p>
 <p>Suppose we have the grades of three students in three courses.</p>
 <p><span class="math display">\[G = \begin{bmatrix} 3.75 &amp; 3.50 &amp; 4.00 \\ 3.25 &amp; 3.75 &amp; 3.50 \\ 4.00 &amp; 3.75 &amp; 3.75 \end{bmatrix}\]</span></p>
 <p>Shape: <span class="math inline">\((3, 3)\)</span></p>
-<p>Rows represent students. Columns represent courses: - Mathematics - Physics - Programming</p>
+<p>Rows represent students. Columns represent courses:</p>
+<ul>
+<li>Mathematics</li>
+<li>Physics</li>
+<li>Programming</li>
+</ul>
 <p>Now suppose the credit hours are:</p>
 <p><span class="math display">\[C = \begin{bmatrix} 3 \\ 3 \\ 4 \end{bmatrix}\]</span></p>
 <p>Shape: <span class="math inline">\((3, 1)\)</span></p>
